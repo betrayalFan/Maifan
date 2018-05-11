@@ -252,6 +252,177 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/11/Git提交命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maifan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Maifan/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maifan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Maifan/2018/05/11/Git提交命令/" itemprop="url">Git提交命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-11T19:03:07+08:00">
+                2018-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Maifan/categories/技术杂记/" itemprop="url" rel="index">
+                    <span itemprop="name">技术杂记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> ● 上传本地项目到Github</p>
+<h4 id="一、没有配置SSH-key上传"><a href="#一、没有配置SSH-key上传" class="headerlink" title="一、没有配置SSH key上传"></a>一、没有配置SSH key上传</h4><p>前提</p>
+<ul>
+<li>github账号注册</li>
+<li>Git下载</li>
+</ul>
+<p>（1）、绑定用户</p>
+<p>用户名绑定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"github user name"</span></span><br></pre></td></tr></table></figure></p>
+<p>用户邮箱绑定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email <span class="string">"github user email"</span></span><br></pre></td></tr></table></figure></p>
+<p>（2）、为Github账户设置SSH Key</p>
+<p>ssh key的生成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ssh</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"github user email"</span></span><br></pre></td></tr></table></figure></p>
+<p>检查ssh key 的生成（有三个文件则表示生成ssh key）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure></p>
+<p>（3）、关联仓库并上传本地项目</p>
+<p>将本地要上传的文件夹变成git可以管理的仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
+<p>将要上传的文件添加到仓库 引号中是提交注释<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -am <span class="string">"提交注释"</span></span><br></pre></td></tr></table></figure></p>
+<p>关联到项目需要提交的Github仓库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:betrayalFan/Maifan.git</span><br></pre></td></tr></table></figure></p>
+<p>上传本地代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<h4 id="二、有配置SSH-key但新建仓库的上传"><a href="#二、有配置SSH-key但新建仓库的上传" class="headerlink" title="二、有配置SSH key但新建仓库的上传"></a>二、有配置SSH key但新建仓库的上传</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -am <span class="string">"提交信息"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:wangjiax9/beautifulDay.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h4 id="三、修改或添加项目的上传"><a href="#三、修改或添加项目的上传" class="headerlink" title="三、修改或添加项目的上传"></a>三、修改或添加项目的上传</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -am <span class="string">"提交信息"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SSH只要在本地机上配置过一次就可以了，即使换GitHub仓库提交，只要重新关联GitHub仓库就OK了</li>
+<li>在相同的本地代码文件夹下向相同的Github仓库提交本地代码，只需要执行最后一个三步骤OK</li>
+</ul>
+<h2 id="总结自励"><a href="#总结自励" class="headerlink" title="总结自励"></a>总结自励</h2><p>别怕从头开始，只要开始就没什么好怕的</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/10/ife笔记2-HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -801,7 +972,7 @@
               
                 <a href="/Maifan/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
