@@ -146,6 +146,7 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
+    <a href="https://github.com/betrayalFan"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -190,6 +191,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-about">
+          <a href="/Maifan/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-tags">
           <a href="/Maifan/tags/" rel="section">
             
@@ -216,6 +227,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/Maifan/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
           </a>
         </li>
       
@@ -252,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/11/Git提交命令/">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/15/mis_hexo相关设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maifan">
@@ -271,7 +292,157 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Maifan/2018/05/11/Git提交命令/" itemprop="url">Git提交命令</a></h1>
+                <a class="post-title-link" href="/Maifan/2018/05/15/mis_hexo相关设置/" itemprop="url">hexo 相关设置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T14:32:55+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Maifan/categories/技术杂记/" itemprop="url" rel="index">
+                    <span itemprop="name">技术杂记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p> ● hexo创建blog后相关设置</p>
+<h2 id="本地hexo的启动"><a href="#本地hexo的启动" class="headerlink" title="本地hexo的启动"></a>本地hexo的启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h2 id="创建新的博客"><a href="#创建新的博客" class="headerlink" title="创建新的博客"></a>创建新的博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"博客名称"</span></span><br></pre></td></tr></table></figure>
+<h2 id="设置首页菜单下的标签页面"><a href="#设置首页菜单下的标签页面" class="headerlink" title="设置首页菜单下的标签页面"></a>设置首页菜单下的标签页面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
+<p>然后在tags文件下的index.md文件中添加type: “tags”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 标签页面的名称</span><br><span class="line">date: 2018-05-15 12:23:11</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
+<h2 id="设置首页菜单下的标签页面-1"><a href="#设置首页菜单下的标签页面-1" class="headerlink" title="设置首页菜单下的标签页面"></a>设置首页菜单下的标签页面</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+<p>然后在tags文件下的index.md文件中添加type: “categories”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: 分类页面的名称</span><br><span class="line">date: 2018-05-15 12:23:11</span><br><span class="line"><span class="built_in">type</span>: <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
+<h2 id="后续更新中……"><a href="#后续更新中……" class="headerlink" title="后续更新中……"></a>后续更新中……</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/11/mis_Git提交命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maifan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Maifan/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maifan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Maifan/2018/05/11/mis_Git提交命令/" itemprop="url">Git提交命令</a></h1>
         
 
         <div class="post-meta">
@@ -423,7 +594,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/10/ife笔记2-HTML/">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/10/ife笔记2_HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maifan">
@@ -442,7 +613,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Maifan/2018/05/10/ife笔记2-HTML/" itemprop="url">ife笔记2(HTML)</a></h1>
+                <a class="post-title-link" href="/Maifan/2018/05/10/ife笔记2_HTML/" itemprop="url">ife笔记2(HTML)</a></h1>
         
 
         <div class="post-meta">
@@ -477,8 +648,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Maifan/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/Maifan/categories/ife学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">ife学习笔记</span>
                   </a>
                 </span>
 
@@ -590,7 +761,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/10/ife笔记1(小试牛刀)/">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/10/ife笔记1_小试牛刀/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maifan">
@@ -609,7 +780,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Maifan/2018/05/10/ife笔记1(小试牛刀)/" itemprop="url">ife笔记1(小试牛刀)</a></h1>
+                <a class="post-title-link" href="/Maifan/2018/05/10/ife笔记1_小试牛刀/" itemprop="url">ife笔记1-小试牛刀</a></h1>
         
 
         <div class="post-meta">
@@ -644,8 +815,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Maifan/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/Maifan/categories/ife学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">ife学习笔记</span>
                   </a>
                 </span>
 
@@ -743,7 +914,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/09/你好-Maifan/">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/09/mis_你好-Maifan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Maifan">
@@ -762,7 +933,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/Maifan/2018/05/09/你好-Maifan/" itemprop="url">你好，我的第一篇博客</a></h1>
+                <a class="post-title-link" href="/Maifan/2018/05/09/mis_你好-Maifan/" itemprop="url">你好，我的第一篇博客</a></h1>
         
 
         <div class="post-meta">
@@ -972,7 +1143,7 @@
               
                 <a href="/Maifan/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -982,10 +1153,10 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/Maifan/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
@@ -993,10 +1164,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
+                <a href="/Maifan/tags/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -1031,7 +1202,8 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1040,16 +1212,18 @@
   
 </div>
 
-
-  <div class="powered-by">厚积薄发</div>
-
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
 
 
   <span class="post-meta-divider">|</span>
 
 
 
-  <div class="theme-info">长作不死是为生</div>
+  <div class="theme-info">什么更痛，是艰辛付出的痛苦还是悔恨的痛苦？</div>
 
 
 
