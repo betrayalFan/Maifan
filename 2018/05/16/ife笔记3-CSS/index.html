@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/Maifan/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/Maifan/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/Maifan/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Maifan/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/Maifan/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/Maifan/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/Maifan/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习笔记," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言今天的课题要点  ● CSS介绍  ● CSS选择器  ● CSS样式  ● CSS布局 一、CSS介绍1、CSS是什么 层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一门指定文档该如何呈现给用户的语言。 2、为什么使用CSS CSS可以将文档信息的内容 和如何展现它的细节相分离 可以避免重复、更容易维护、为不同的目的，使用不同的样式而内容相同 3、CSS的工">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ife笔记3_CSS">
+<meta property="og:url" content="https://betrayalfan.github.io/Maifan/2018/05/16/ife笔记3-CSS/index.html">
+<meta property="og:site_name" content="Maifan">
+<meta property="og:description" content="前言今天的课题要点  ● CSS介绍  ● CSS选择器  ● CSS样式  ● CSS布局 一、CSS介绍1、CSS是什么 层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一门指定文档该如何呈现给用户的语言。 2、为什么使用CSS CSS可以将文档信息的内容 和如何展现它的细节相分离 可以避免重复、更容易维护、为不同的目的，使用不同的样式而内容相同 3、CSS的工">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-16T09:55:00.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ife笔记3_CSS">
+<meta name="twitter:description" content="前言今天的课题要点  ● CSS介绍  ● CSS选择器  ● CSS样式  ● CSS布局 一、CSS介绍1、CSS是什么 层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一门指定文档该如何呈现给用户的语言。 2、为什么使用CSS CSS可以将文档信息的内容 和如何展现它的细节相分离 可以避免重复、更容易维护、为不同的目的，使用不同的样式而内容相同 3、CSS的工">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Maifan/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://betrayalfan.github.io/Maifan/2018/05/16/ife笔记3-CSS/"/>
+
+
+
+
+
+  <title>ife笔记3_CSS | Maifan</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/betrayalFan"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/Maifan/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Maifan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">长作不死是为生 不作不死不成活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/Maifan/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/Maifan/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/Maifan/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/Maifan/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/Maifan/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/Maifan/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/16/ife笔记3-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maifan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Maifan/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maifan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ife笔记3_CSS</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-16T09:13:09+08:00">
+                2018-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Maifan/categories/ife学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">ife学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天的课题要点<br>  ● CSS介绍<br>  ● CSS选择器<br>  ● CSS样式<br>  ● CSS布局</p>
+<h2 id="一、CSS介绍"><a href="#一、CSS介绍" class="headerlink" title="一、CSS介绍"></a>一、CSS介绍</h2><h3 id="1、CSS是什么"><a href="#1、CSS是什么" class="headerlink" title="1、CSS是什么"></a>1、CSS是什么</h3><p> 层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一门指定文档该如何呈现给用户的语言。</p>
+<h3 id="2、为什么使用CSS"><a href="#2、为什么使用CSS" class="headerlink" title="2、为什么使用CSS"></a>2、为什么使用CSS</h3><p> CSS可以将文档信息的内容 和如何展现它的细节相分离<br> 可以避免重复、更容易维护、为不同的目的，使用不同的样式而内容相同</p>
+<h3 id="3、CSS的工作原理"><a href="#3、CSS的工作原理" class="headerlink" title="3、CSS的工作原理"></a>3、CSS的工作原理</h3><p> 浏览器将 HTML 和 CSS 转化成 DOM （文档对象模型）<br> DOM在计算机内存中表示文档。它把文档内容和其样式结合在一起<br> 浏览器显示 DOM 的内容</p>
+<p> 所谓的DOM 结构其实就是CSS和文档内容融合而成</p>
+<h3 id="4、CSS的层叠和继承"><a href="#4、CSS的层叠和继承" class="headerlink" title="4、CSS的层叠和继承"></a>4、CSS的层叠和继承</h3><h4 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h4><p> 对于层叠来说，共有三种主要的样式来源：</p>
+<ul>
+<li>浏览器对HTML定义的默认样式。</li>
+<li>用户定义的样式。</li>
+<li>开发者定义的样式，可以有三种形式：<br>1.定义在外部文件（外链样式）：本教程中案例主要是通过这种形式定义样式。<br>2.在页面的头部定义（内联样式）：通过这种形式定义的样式只在本页面内生效。<br>3.定义在特定的元素身上（行内样式）：这种形式多用于测试，可维护性较差。</li>
+</ul>
+<p>层叠的决定要素</p>
+<ul>
+<li><p>重要性（Importance）<br>权重最大：!important 一般情况下不使用</p>
+</li>
+<li><p>专用性（Specificity）——权重计算<br>（1）、千位：如果声明是在style 属性中该列加1分（这样的声明没有选择器，所以它们的专用性总是1000。）否则为0。<br>（2）、百位：选择器中每包含一个ID选择器就加1分。<br>（3）、十位：选择器中每包含一个类选择器、属性选择器、或者伪类就加1分。<br>（4）、个位：选择器中每包含一个元素选择器或伪元素就加1分。</p>
+</li>
+<li>源代码次序（Source order）<br>如果权重相等，则写在后面的会覆盖前面的</li>
+</ul>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><p>所谓的继承就是子元素继承父元素的样式</p>
+<ul>
+<li>inherit： 该值将应用到选定元素的属性值设置为与其父元素一样。</li>
+<li>initial ：该值将应用到选定元素的属性值设置为与浏览器默认样式表中该元素设置的值一样。如果浏览器默认样式表中没有设置值，并且该属性是自然继承的，那么该属性值就被设置为 inherit（IE不支持）。</li>
+<li>unset ：该值将属性重置为其自然值，即如果属性是自然继承的，那么它就表现得像 inherit，否则就是表现得像 initial（IE不支持）。</li>
+<li>revert ：如果当前的节点没有应用任何样式，则将该属性恢复到它所拥有的值。换句话说，属性值被设置成自定义样式所定义的属性（如果被设置）， 否则属性值被设置成用户代理的默认样式</li>
+</ul>
+<h3 id="5、CSS使用在HTML上"><a href="#5、CSS使用在HTML上" class="headerlink" title="5、CSS使用在HTML上"></a>5、CSS使用在HTML上</h3><p>外部样式表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"style.css"</span>&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<p>内部样式表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;style <span class="built_in">type</span> = <span class="string">"text/css"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<p>内联样式表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=<span class="string">"color:red;"</span>&gt;This is my first CSS example&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="6、CSS语法"><a href="#6、CSS语法" class="headerlink" title="6、CSS语法"></a>6、CSS语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    属性: 属性值;</span><br><span class="line">    属性: 属性值;</span><br><span class="line">    属性: 属性值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>选择器：选择器是一种模式，它能在页面上匹配一些元素<br>声明块：声明按块分组，每一组声明都用一对大括号包裹，用 ({) 开始，用 (}) 结束。<br>属性：一些人类可理解的标识符，这些标识符指出你想修改哪一些样式<br>属性值：每个指定的属性都需要给定一个值，这个值表示你想把那些样式特征修改成什么样</p>
+<pre><code>选择器加上声明块被称为规则集（ruleset），通常简称规则（rule）。
+</code></pre><h3 id="7、CSS属性值"><a href="#7、CSS属性值" class="headerlink" title="7、CSS属性值"></a>7、CSS属性值</h3><p>CSS的属性值可以有很多种类，可以是普通类型的数值，也可以是有特定作用的颜色和函数（比如内置的背景图片，或者旋转一个元素）</p>
+<h4 id="（1）数值"><a href="#（1）数值" class="headerlink" title="（1）数值"></a>（1）数值</h4><p>数值: 长度值，用于指定例如元素宽度、边框（border）宽度或字体大小；以及无单位整数。用于指定例如相对线宽或运行动画的次数</p>
+<pre><code>如果数字是0，则不需要任何单位；
+line-height的行高没有单位，则解析为当前字体大小的倍数
+</code></pre><ul>
+<li><p>绝对单位（absolute units）：像素 (px)、毫米(mm)、厘米(cm)、英寸(in)、点(pt)、十二点活字(pc)</p>
+</li>
+<li><p>相对单位（relative units）：</p>
+<ul>
+<li><p>em：1em与当前元素的字体大小相同（更具体地说，一个大写字母M的宽度）。em是Web开发中最常用的相对单位。</p>
+</li>
+<li><p>ex, ch：分别是小写x的高度和数字0的宽度。这些并不像em那样被普遍使用或很好地被支持。</p>
+</li>
+<li><p>rem: REM（root em）和em以同样的方式工作，但它总是等于默认基础字体大小的尺寸；继承的字体大小将不起作用，一个比em更好的选择</p>
+</li>
+<li><p>vw, vh: 分别是视口宽度的1/100和视口高度的1/100，其次，它不像rem那样被广泛支持</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="（2）百分比"><a href="#（2）百分比" class="headerlink" title="（2）百分比"></a>（2）百分比</h4><p>百分比: 可以用于指定尺寸或长度——例如取决于父容器的长度或高度，或默认的字体大小。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">font-size: 200%;</span><br><span class="line">等价于</span><br><span class="line">font-size: 2em;</span><br></pre></td></tr></table></figure>
+<p>百分比布局是相对于父级的大小;</p>
+<hr>
+<p>这种布局类型通常称为动态（流体）布局（如浏览器视口大小的变化），固定宽度布局（不管怎样都保持不变）</p>
+<ul>
+<li>可以使用动态布局来确保标准文档始终适合于屏幕，并且可以在不同的移动设备屏幕大小上表现良好。</li>
+<li>一个固定宽度的布局可以用来保持在线地图的大小相同；浏览器视口可以在地图上滚动，只在一个时间内查看一定数量的地图。视觉看到的量取决于视口的大小。</li>
+</ul>
+<hr>
+<h4 id="（3）颜色"><a href="#（3）颜色" class="headerlink" title="（3）颜色"></a>（3）颜色</h4><p>颜色: 用于指定背景颜色，字体颜色等。</p>
+<p>颜色作为属性值的变现方式有：</p>
+<ul>
+<li>关键字 如 red green等</li>
+<li>十六进制数 如 #ff0000 #000000等</li>
+<li>RGB 如 rgb(224,176,255)等</li>
+<li>HSL 如 hsl(0,100%,50%)/(色度，饱和度，明度)</li>
+<li>透明度设置 如 rgba() hsla() opacity：等</li>
+</ul>
+<h4 id="（4）函数"><a href="#（4）函数" class="headerlink" title="（4）函数"></a>（4）函数</h4><p>函数: 例如，用于指定背景图片或背景图片渐变。</p>
+<hr>
+<h3 id="8、CSS语法其他类型的块"><a href="#8、CSS语法其他类型的块" class="headerlink" title="8、CSS语法其他类型的块"></a>8、CSS语法其他类型的块</h3><h4 id="规则-At-rules"><a href="#规则-At-rules" class="headerlink" title="@-规则(At-rules)"></a>@-规则(At-rules)</h4><p>@-规则(At-rules)在CSS中被用来传递元数据、条件信息或其它描述性信息。它由（@）符号开始，紧跟着一个表明它是哪种规则的描述符，之后是这种规则的语法块，并最终由一个半角分号（;）结束。每种由描述符定义的@-规则，都有其特有的内部语法和语义。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    @charset 和 @import （元数据）  </span><br><span class="line">    @media 或 @document （条件信息，又被称为嵌套语句，见下方。)</span><br><span class="line">    @font-face （描述性信息）      </span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">@charset <span class="string">"UTF-8"</span>;</span><br><span class="line">@charset <span class="string">"iso-8859-15"</span>;</span><br><span class="line"></span><br><span class="line">@import <span class="string">'style.css'</span>;</span><br><span class="line"></span><br><span class="line">@font-face &#123;</span><br><span class="line">    [ font-family: &lt;family-name&gt;; ] ||</span><br><span class="line">    [ src: [ &lt;url&gt; [ format(&lt;string&gt;<span class="comment">#) ]? | &lt;font-face-name&gt; ]#; ] ||</span></span><br><span class="line">    [ unicode-range: &lt;urange&gt;<span class="comment">#; ] ||</span></span><br><span class="line">    [ font-variant: &lt;font-variant&gt;; ] ||</span><br><span class="line">    [ font-feature-settings: normal | &lt;feature-tag-value&gt;<span class="comment">#; ] ||</span></span><br><span class="line">    [ font-variation-settings: normal | [ &lt;string&gt; &lt;number&gt;] <span class="comment"># ||</span></span><br><span class="line">    [ font-stretch: &lt;font-stretch&gt;; ] ||</span><br><span class="line">    [ font-weight: &lt;weight&gt;; ] ||</span><br><span class="line">    [ font-style: &lt;style&gt;; ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> @charset：指定样式表中使用的字符编码。它必须是样式表中的第一个元素，而前面不得有任何字符<br> @import：用于从其他样式表导入样式规则<br> @font-face：它允许网页开发者为其网页指定在线字体</p>
+<h4 id="嵌套语句"><a href="#嵌套语句" class="headerlink" title="嵌套语句"></a>嵌套语句</h4><p>嵌套语句是@-规则中的一种，它的语法是 CSS 规则的嵌套块，只有在特定条件匹配时才会应用到文档上。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">    @media </span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">@media (min-width: 801px) &#123;</span><br><span class="line">    body &#123;</span><br><span class="line">        margin: 0 auto;</span><br><span class="line">        width: 800px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    @document </span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">@document url(http://www.w3.org/),</span><br><span class="line">           url-prefix(http://www.w3.org/Style/),</span><br><span class="line">           domain(mozilla.org),</span><br><span class="line">           regexp(<span class="string">"https:.*"</span>)</span><br><span class="line">&#123;</span><br><span class="line">    /* 该条CSS规则会应用在下面的网页:</span><br><span class="line">        + URL为<span class="string">"http://www.w3.org/"</span>的页面.</span><br><span class="line">        + 任何URL以<span class="string">"http://www.w3.org/Style/"</span>开头的网页</span><br><span class="line">        + 任何主机名为<span class="string">"mozilla.org"</span>或者主机名以<span class="string">".mozilla.org"</span>结尾的网页     </span><br><span class="line">        + 任何URL以<span class="string">"https:"</span>开头的网页 */</span><br><span class="line"></span><br><span class="line">    /* make the above-mentioned pages really ugly */</span><br><span class="line">    body &#123; color: purple; background: yellow; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    @supports </span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">@supports (animation-name: <span class="built_in">test</span>) &#123;</span><br><span class="line">    … /* 如果支持不带前缀的animation-name,则下面指定的CSS会生效 */</span><br><span class="line">    @keyframes &#123; </span><br><span class="line">        /* @supports是一个CSS条件组at-rule,它可以包含其他相关的at-rules */</span><br><span class="line">    …</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@supports ( not ((text-align-last:justify) </span><br><span class="line">            or (-moz-text-align-last:justify) )</span><br><span class="line">            &#123;</span><br><span class="line">                … /* 这里的CSS代码用来模拟text-align-last:justify */</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+<p> @media：可用于根据一个或多个基于设备类型、具体特点和环境的媒体查询来应用样式</p>
+<p> @document：只有当前页面匹配一些条件时才会应用该@-规则的内容<br>    url()：匹配整个URL<br>    url-prefix()：匹配文档的URL是否以参数指定的值开头<br>    domain()：匹配文档的域名是否为参数中指定的域名或者为它的子域名<br>    regexp()： 匹配文档的URL是否和参数中指定的正则表达式匹配.该表达式必须匹配整个URL.</p>
+<p> @supports：关联了一组嵌套的CSS语句,这些语句被放置在一个CSS区块中,该区块以大括号分割, 还有一个由多个CSS声明检测组成的条件,它是一个键值组合, 由逻辑与,逻辑或,逻辑非组合而成. 这样的条件语句称为支持条件。只有浏览器确实支持被测功能时才会应用该@-规则的内容；<br>    操作符<br>    not操作符<br>    and操作符<br>    or操作符</p>
+<hr>
+<h2 id="二、CSS选择器"><a href="#二、CSS选择器" class="headerlink" title="二、CSS选择器"></a>二、CSS选择器</h2><p>CSS选择器用于定位我们想要样式化的网页HTML 元素</p>
+<h3 id="1、简单选择器"><a href="#1、简单选择器" class="headerlink" title="1、简单选择器"></a>1、简单选择器</h3><p>简单选择器（Simple selectors）：通过元素类型、class 或 id 匹配一个或多个元素。</p>
+<p>1、元素选择器：元素选择器只是一个选择器名和指定的HTML元素名的不区分大小写的匹配<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p,div&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2、类选择器：类选择器由一个点“.”以及类后面的类名组成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.class&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3、ID选择器：ID选择器由哈希/磅符号 (#)组成，后面是给定元素的ID名称<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#id&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、属性选择器"><a href="#2、属性选择器" class="headerlink" title="2、属性选择器"></a>2、属性选择器</h3><p>属性选择器（Attribute selectors）：通过 属性 / 属性值 匹配一个或多个元素。<br>1、存在和值（Presence and value）属性选择器</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[attr]&#123;</span><br><span class="line">    /* 含有这个属性的所有元素,不论值的结果 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[attr = val]&#123;</span><br><span class="line">    /* 含有这个属性被赋值为 val 的所有元素 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[attr ~= val]&#123;</span><br><span class="line">    /* 含有这个属性的值中含有 val 值的所有元素 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、子串值（Substring value）属性选择器<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[attr |= val]&#123;</span><br><span class="line">    /* 这个属性的值是val 或者是以val-开头的所有元素 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[attr ^= val]&#123;</span><br><span class="line">    /* 这个属性的值是val 或者是以val开头的所有元素 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[attr &amp;= val]&#123;</span><br><span class="line">    /* 这个属性的值是val 或者是以val结尾的所有元素 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[attr *= val]&#123;</span><br><span class="line">    /* 这个属性的含有val的字符串的所有元素 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、伪类和伪元素"><a href="#3、伪类和伪元素" class="headerlink" title="3、伪类和伪元素"></a>3、伪类和伪元素</h3><p>伪类（Pseudo-classes）：匹配处于确定状态的一个或多个元素，比如被鼠标指针悬停的元素，或当前被选中或未选中的复选框，或元素是DOM树中一父节点的第一个子节点。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">:active</span><br><span class="line">:any</span><br><span class="line">:checked</span><br><span class="line">:default</span><br><span class="line">:dir()</span><br><span class="line">:disabled</span><br><span class="line">:empty</span><br><span class="line">:enabled</span><br><span class="line">:first</span><br><span class="line">:first-child</span><br><span class="line">:first-of-type</span><br><span class="line">:fullscreen</span><br><span class="line">:focus</span><br><span class="line">:hover</span><br><span class="line">:indeterminate</span><br><span class="line">:<span class="keyword">in</span>-range</span><br><span class="line">:invalid</span><br><span class="line">:lang()</span><br><span class="line">:last-child</span><br><span class="line">:last-of-type</span><br><span class="line">:left</span><br><span class="line">:link</span><br><span class="line">:not()</span><br><span class="line">:nth-child()</span><br><span class="line">:nth-last-child()</span><br><span class="line">:nth-last-of-type()</span><br><span class="line">:nth-of-type()</span><br><span class="line">:only-child</span><br><span class="line">:only-of-type</span><br><span class="line">:optional</span><br><span class="line">:out-of-range</span><br><span class="line">:<span class="built_in">read</span>-only</span><br><span class="line">:<span class="built_in">read</span>-write</span><br><span class="line">:required</span><br><span class="line">:right</span><br><span class="line">:root</span><br><span class="line">:scope</span><br><span class="line">:target</span><br><span class="line">:valid</span><br><span class="line">:visited</span><br></pre></td></tr></table></figure>
+<p>伪元素（Pseudo-elements）:匹配处于相关的确定位置的一个或多个元素，例如每个段落的第一个字，或者某个元素之前生成的内容。<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">::after</span><br><span class="line">::before</span><br><span class="line">::first-letter</span><br><span class="line">::first-line</span><br><span class="line">::selection</span><br><span class="line">::backdrop</span><br></pre></td></tr></table></figure></p>
+<h3 id="4、组合器和多用选择器"><a href="#4、组合器和多用选择器" class="headerlink" title="4、组合器和多用选择器"></a>4、组合器和多用选择器</h3><p>组合器（Combinators）：这里不仅仅是选择器本身，还有以有效的方式组合两个或更多的选择器用于非常特定的选择的方法。例如，你可以只选择divs的直系子节点的段落，或者直接跟在headings后面的段落。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">div,p&#123;</span><br><span class="line">    /* div或者p的所有元素 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div p&#123;</span><br><span class="line">    /* p是div的后代节点 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div &gt; p&#123;</span><br><span class="line">    /* p是div的直接后代节点 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div + p&#123;</span><br><span class="line">    /* p是div的下一个兄弟节点（p紧跟div后） */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div + p&#123;</span><br><span class="line">    /* p是div的下一个兄弟节点中任意一个 */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多用选择器（Multiple selectors）：这些也不是单独的选择器；这个思路是将以逗号分隔开的多个选择器放在一个CSS规则下面， 以将一组声明应用于由这些选择器选择的所有元素。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div,p,h1,h2,h3,span&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="三、CSS样式"><a href="#三、CSS样式" class="headerlink" title="三、CSS样式"></a>三、CSS样式</h2><h3 id="1、文本样式"><a href="#1、文本样式" class="headerlink" title="1、文本样式"></a>1、文本样式</h3><h4 id="文字样式"><a href="#文字样式" class="headerlink" title="文字样式"></a>文字样式</h4><p>01、文字的大小<br>02、文字颜色<br>03、字体栈<br>04、字体样式<br>05、字体粗细<br>06、文本转换<br>07、文本装饰<br>08、文字阴影<br>09、文字布局<br>10、行间距<br>11、字间距</p>
+<h4 id="列表样式"><a href="#列表样式" class="headerlink" title="列表样式"></a>列表样式</h4><p>1、符号样式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* 列表的项目符号的类型，可以是数字 字母或者罗马数字 */</span><br><span class="line">list-style-type: upper-roman;</span><br><span class="line">/* 项目符号是出现在列表项内，还是出现在其外 */</span><br><span class="line">list-style-position: inside;</span><br><span class="line">/* 项目符号使用自定义图片 */</span><br><span class="line">list-style-image: url();</span><br></pre></td></tr></table></figure></p>
+<p>2、管理列表计数<br>（1）、start：列表项从1以外的数字开始计数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul start = <span class="string">"4"</span>&gt;</span><br><span class="line">    &lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（2）、reversed：启动列表倒计时<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul start = <span class="string">"4"</span> reversed&gt;</span><br><span class="line">    &lt;li&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<p>（3）、value：列表项设置数值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li value = <span class="string">"1"</span>&gt;&lt;/li&gt;</span><br><span class="line">    &lt;li value = <span class="string">"2"</span>&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 未访问 */</span><br><span class="line">a:link &#123;&#125;</span><br><span class="line">/* 已访问 */</span><br><span class="line">a:visited &#123;&#125;</span><br><span class="line">/* 鼠标移入 */</span><br><span class="line">a:hover &#123;&#125;</span><br><span class="line">/* 点击时 */</span><br><span class="line">a:active &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、盒样式"><a href="#2、盒样式" class="headerlink" title="2、盒样式"></a>2、盒样式</h3><p>CSS框模型（译者注：也被称为“盒模型”）是网页布局的基础 ——每个元素被表示为一个矩形的方框，框的内容、内边距、边界和外边距一层包着一层构建起来。浏览器渲染网页布局时，它会算出每个框的内容要用什么样式，周围的模型层有多大，以及框相对于其它框放在哪里</p>
+<h4 id="（1）、盒属性"><a href="#（1）、盒属性" class="headerlink" title="（1）、盒属性"></a>（1）、盒属性</h4><p>宽和高<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">width</span><br><span class="line">height</span><br></pre></td></tr></table></figure></p>
+<p>内边距<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">padding</span><br></pre></td></tr></table></figure></p>
+<p>外边距<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">margin</span><br></pre></td></tr></table></figure></p>
+<p>边框<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">border</span><br></pre></td></tr></table></figure></p>
+<h4 id="（2）、溢流"><a href="#（2）、溢流" class="headerlink" title="（2）、溢流"></a>（2）、溢流</h4><p>盒子content超出盒子范围时<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* 内容过多，溢流的内容被隐藏，然后出现滚动条来让我们滚动查看所有的内容 */</span><br><span class="line">overflow: auto;</span><br><span class="line">/* 内容过多，溢流的内容被隐藏 */</span><br><span class="line">overflow: hidden;</span><br><span class="line">/* 内容过多，溢流的内容被显示在盒子的外边（这个是默认的行为） */</span><br><span class="line">overflow: visible;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3、CSS简写"><a href="#3、CSS简写" class="headerlink" title="3、CSS简写"></a>3、CSS简写</h3><p>（1）、padding和margin</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/* 上-右-下-左 */</span><br><span class="line">padding: 10px 15px 15px 5px;</span><br><span class="line">margin: 10px 15px 15px 5px;</span><br><span class="line"></span><br><span class="line">/* 上-左右-下 */</span><br><span class="line">padding: 10px 15px 5px;</span><br><span class="line">margin: 10px 15px 5px;</span><br><span class="line"></span><br><span class="line">/* 上下-左右 */</span><br><span class="line">padding: 10px 15px;</span><br><span class="line">margin: 10px 15px;</span><br></pre></td></tr></table></figure>
+<p>（2）、background</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line">    backgroud-color</span><br><span class="line">    background-image</span><br><span class="line">    backgroumd-position</span><br><span class="line">    background-repeat</span><br><span class="line">    background-attachment 滚动时图片的效果</span><br><span class="line"> */</span><br><span class="line">background: red url(<span class="built_in">bg</span>-graphic.png) 10px 10px repeat-x fixed;</span><br></pre></td></tr></table></figure>
+<p>（3）、font</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line">    font-style</span><br><span class="line">    font-variant</span><br><span class="line">    font-weight</span><br><span class="line">    font-stretch</span><br><span class="line">    font-size/line-height</span><br><span class="line">    font-family</span><br><span class="line">*/</span><br><span class="line">font: italic normal bold normal 3em/1.5 Helvetica, Arial, sans-serif;</span><br></pre></td></tr></table></figure>
+<p>（4）、border</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/* </span><br><span class="line">    border-width</span><br><span class="line">    border-style</span><br><span class="line">    border-color</span><br><span class="line">*/</span><br><span class="line">border: 1px solid red;</span><br></pre></td></tr></table></figure>
+<h2 id="四、CSS布局"><a href="#四、CSS布局" class="headerlink" title="四、CSS布局"></a>四、CSS布局</h2><h3 id="1、浮动"><a href="#1、浮动" class="headerlink" title="1、浮动"></a>1、浮动</h3><p>浮动技术允许元素浮动到另外一个元素的左侧或右侧<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>: left;</span><br><span class="line"><span class="built_in">float</span>: right;</span><br><span class="line"><span class="built_in">float</span>: none;</span><br><span class="line"><span class="built_in">float</span>: inherit;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2、定位"><a href="#2、定位" class="headerlink" title="2、定位"></a>2、定位</h3><p>定位技术(position)允许我们将一个元素从它在页面的原始位置准确地移动到另外一个位置。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 静态定位（默认属性） */</span><br><span class="line">position: static;</span><br><span class="line">/* 相对定位 */</span><br><span class="line">position: relative;</span><br><span class="line">/* 决定定位 */</span><br><span class="line">posotion: absolute;</span><br><span class="line">/* 固定定位 */</span><br><span class="line">position: fixed;</span><br></pre></td></tr></table></figure>
+<h3 id="3、CSS-表格"><a href="#3、CSS-表格" class="headerlink" title="3、CSS 表格"></a>3、CSS 表格</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">form</span><br><span class="line">label</span><br><span class="line">table</span><br></pre></td></tr></table></figure>
+<h3 id="4、弹性盒子"><a href="#4、弹性盒子" class="headerlink" title="4、弹性盒子"></a>4、弹性盒子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">diaplay: flex;</span><br><span class="line">flex: 1;</span><br></pre></td></tr></table></figure>
+<h2 id="五、后续细化……"><a href="#五、后续细化……" class="headerlink" title="五、后续细化……"></a>五、后续细化……</h2><h2 id="六、总结自励"><a href="#六、总结自励" class="headerlink" title="六、总结自励"></a>六、总结自励</h2><p>当你为自己想要的东西而忙碌的时候，就没有时间为不想要的东西而担忧了</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/Maifan/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Maifan/2018/05/15/mis_hexo相关设置/" rel="next" title="hexo 相关设置">
+                <i class="fa fa-chevron-left"></i> hexo 相关设置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/Maifan/images/header.jpg"
+                alt="Maifan" />
+            
+              <p class="site-author-name" itemprop="name">Maifan</p>
+              <p class="site-description motion-element" itemprop="description">技术、笔记、点滴、随笔</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/Maifan/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/Maifan/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/Maifan/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、CSS介绍"><span class="nav-number">2.</span> <span class="nav-text">一、CSS介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、CSS是什么"><span class="nav-number">2.1.</span> <span class="nav-text">1、CSS是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、为什么使用CSS"><span class="nav-number">2.2.</span> <span class="nav-text">2、为什么使用CSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、CSS的工作原理"><span class="nav-number">2.3.</span> <span class="nav-text">3、CSS的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、CSS的层叠和继承"><span class="nav-number">2.4.</span> <span class="nav-text">4、CSS的层叠和继承</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#层叠"><span class="nav-number">2.4.1.</span> <span class="nav-text">层叠</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">2.4.2.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、CSS使用在HTML上"><span class="nav-number">2.5.</span> <span class="nav-text">5、CSS使用在HTML上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、CSS语法"><span class="nav-number">2.6.</span> <span class="nav-text">6、CSS语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、CSS属性值"><span class="nav-number">2.7.</span> <span class="nav-text">7、CSS属性值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）数值"><span class="nav-number">2.7.1.</span> <span class="nav-text">（1）数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）百分比"><span class="nav-number">2.7.2.</span> <span class="nav-text">（2）百分比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）颜色"><span class="nav-number">2.7.3.</span> <span class="nav-text">（3）颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（4）函数"><span class="nav-number">2.7.4.</span> <span class="nav-text">（4）函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、CSS语法其他类型的块"><span class="nav-number">2.8.</span> <span class="nav-text">8、CSS语法其他类型的块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#规则-At-rules"><span class="nav-number">2.8.1.</span> <span class="nav-text">@-规则(At-rules)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套语句"><span class="nav-number">2.8.2.</span> <span class="nav-text">嵌套语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、CSS选择器"><span class="nav-number">3.</span> <span class="nav-text">二、CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、简单选择器"><span class="nav-number">3.1.</span> <span class="nav-text">1、简单选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、属性选择器"><span class="nav-number">3.2.</span> <span class="nav-text">2、属性选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、伪类和伪元素"><span class="nav-number">3.3.</span> <span class="nav-text">3、伪类和伪元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、组合器和多用选择器"><span class="nav-number">3.4.</span> <span class="nav-text">4、组合器和多用选择器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、CSS样式"><span class="nav-number">4.</span> <span class="nav-text">三、CSS样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、文本样式"><span class="nav-number">4.1.</span> <span class="nav-text">1、文本样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#文字样式"><span class="nav-number">4.1.1.</span> <span class="nav-text">文字样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#列表样式"><span class="nav-number">4.1.2.</span> <span class="nav-text">列表样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接"><span class="nav-number">4.1.3.</span> <span class="nav-text">链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、盒样式"><span class="nav-number">4.2.</span> <span class="nav-text">2、盒样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）、盒属性"><span class="nav-number">4.2.1.</span> <span class="nav-text">（1）、盒属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）、溢流"><span class="nav-number">4.2.2.</span> <span class="nav-text">（2）、溢流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、CSS简写"><span class="nav-number">4.3.</span> <span class="nav-text">3、CSS简写</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、CSS布局"><span class="nav-number">5.</span> <span class="nav-text">四、CSS布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、浮动"><span class="nav-number">5.1.</span> <span class="nav-text">1、浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、定位"><span class="nav-number">5.2.</span> <span class="nav-text">2、定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、CSS-表格"><span class="nav-number">5.3.</span> <span class="nav-text">3、CSS 表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、弹性盒子"><span class="nav-number">5.4.</span> <span class="nav-text">4、弹性盒子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、后续细化……"><span class="nav-number">6.</span> <span class="nav-text">五、后续细化……</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、总结自励"><span class="nav-number">7.</span> <span class="nav-text">六、总结自励</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Maifan</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">什么更痛，是艰辛付出的痛苦还是悔恨的痛苦？</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/Maifan/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Maifan/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/Maifan/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Maifan/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/Maifan/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/Maifan/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/Maifan/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
