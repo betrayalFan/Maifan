@@ -98,7 +98,7 @@
     root: '/Maifan/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -369,8 +369,7 @@
           前言 ● 多台电脑使用一个Github账户
 一、work电脑 我是先在公司电脑提交项目到Github上的，具体过程点这里
 二、home电脑重点，回家后……
-1、首先将home电脑和Github绑定
-用户名绑定1git config --global user.name "github user na
+1、
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -519,8 +518,7 @@
         
           
           前言今天的课题要点  ● CSS介绍  ● CSS选择器  ● CSS样式  ● CSS布局
-一、CSS介绍1、CSS是什么 层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一门指定文档该如何呈现给用户的语言。
-2、为什么使用CSS CSS可以将文档信息的内容 和如何
+一、CSS介绍1、CSS是什么 层叠样式表 (Cascading 
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -668,12 +666,10 @@
       
         
           
-          前言 ● hexo创建blog后相关设置
+          前言 ● hexo创建blog后相关设置（亲测有效）
 本地hexo的启动1hexo s
 创建新的博客1hexo new post "博客名称"
-设置首页菜单下的标签页面1hexo new page "tags"
-然后在tags文件下的index.md文件中添加type: “tags”
-123title: 标签页
+设置首页菜单下的
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -828,8 +824,7 @@ github账号注册
 Git下载
 
 （1）、绑定用户
-用户名绑定1git config --global user.name "github user name"
-用户邮箱绑定1git config --global use
+用户名绑定1git confi
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -979,9 +974,7 @@ Git下载
           
           前言今天的课题要点  ● HTML  ● Web语义化
 HTML1.HTML
-超文本标记语言（HyperText Markup Language）“超文本”解释：页面内可以包含图片、链接，甚至音乐、程序等非文字元素“标记语言”解释：是一套标记标签，而非编程语言
-HTML基础：标题、段落、链接、图像
-
+超文本标记语言（HyperText Markup Language）“超文本”解释
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1129,7 +1122,7 @@ HTML基础：标题、段落、链接、图像
       
         
           
-          自检自励现在焦虑与努力的样子里，是否藏着十年后的自己？是否要用年轻时的自我安慰和自我放纵，换来一生的卑微与底层？我身上是否有连我自己也不喜欢的庸俗气和消极感？如果有，那是怎么来的？是我无自律、太麻痹、特浮躁、不学习？世界很大，道路漫长，我不想过一眼可以看到尽头的人生…………还是怕某一刻失心踏入从不敢
+          自检自励现在焦虑与努力的样子里，是否藏着十年后的自己？是否要用年轻时的自我安慰和自我放纵，换来一生的卑微与底层？我身上是否有连我自己也不喜欢的庸俗气和消极感？如
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1279,8 +1272,7 @@ HTML基础：标题、段落、链接、图像
           
           学习博客的书写
 标题（一级标题）123456# 标题（一级标题）## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题
-二级标题三级标题四级标题五级标题六级标题字体样式12345*斜体* _斜体_ **粗体*****加粗斜体***~~删除线~~
-斜体_斜体_粗体加
+二级
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1405,6 +1397,16 @@ HTML基础：标题、段落、链接、图像
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/betrayalFan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -1473,6 +1475,8 @@ HTML基础：标题、段落、链接、图像
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
         
+          <span id="scrollpercent"><span>0</span>%</span>
+        
       </div>
     
 
@@ -1498,6 +1502,8 @@ HTML基础：标题、段落、链接、图像
 
   
 
+
+  
 
 
 
@@ -1537,6 +1543,11 @@ HTML基础：标题、段落、链接、图像
   
   
     <script type="text/javascript" src="/Maifan/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
