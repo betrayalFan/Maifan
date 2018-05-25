@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/Maifan/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/Maifan/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/Maifan/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/Maifan/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/Maifan/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/Maifan/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/Maifan/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言● JavaScript对象的简介● JavaScript对象的创建● JavaScript对象的基本操作 一、JavaScript对象的简介1、js中5种基本数据类型  String    字符串 Number    数值 Boolean   布尔值 Null  空值 Undefined 未定义  2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）  属于复合的数据类">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript对象(Object)">
+<meta property="og:url" content="https://betrayalfan.github.io/Maifan/2018/05/25/JavaScript对象-Object/index.html">
+<meta property="og:site_name" content="Maifan">
+<meta property="og:description" content="前言● JavaScript对象的简介● JavaScript对象的创建● JavaScript对象的基本操作 一、JavaScript对象的简介1、js中5种基本数据类型  String    字符串 Number    数值 Boolean   布尔值 Null  空值 Undefined 未定义  2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）  属于复合的数据类">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-25T06:37:15.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript对象(Object)">
+<meta name="twitter:description" content="前言● JavaScript对象的简介● JavaScript对象的创建● JavaScript对象的基本操作 一、JavaScript对象的简介1、js中5种基本数据类型  String    字符串 Number    数值 Boolean   布尔值 Null  空值 Undefined 未定义  2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）  属于复合的数据类">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/Maifan/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://betrayalfan.github.io/Maifan/2018/05/25/JavaScript对象-Object/"/>
+
+
+
+
+
+  <title>JavaScript对象(Object) | Maifan</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/betrayalFan"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/Maifan/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Maifan</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">长作不死是为生 不作不死不成活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/Maifan/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/Maifan/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/Maifan/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/Maifan/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/Maifan/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/Maifan/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://betrayalfan.github.io/Maifan/Maifan/2018/05/25/JavaScript对象-Object/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Maifan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/Maifan/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Maifan">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript对象(Object)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T09:30:36+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Maifan/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>● JavaScript对象的简介<br>● JavaScript对象的创建<br>● JavaScript对象的基本操作</p>
+<h2 id="一、JavaScript对象的简介"><a href="#一、JavaScript对象的简介" class="headerlink" title="一、JavaScript对象的简介"></a>一、JavaScript对象的简介</h2><p>1、js中5种基本数据类型</p>
+<ul>
+<li>String    字符串</li>
+<li>Number    数值</li>
+<li>Boolean   布尔值</li>
+<li>Null  空值</li>
+<li>Undefined 未定义</li>
+</ul>
+<p>2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）</p>
+<ul>
+<li>属于复合的数据类型，可以保存多个不同数据类型的属性</li>
+<li>只要不属于基本数据类型，那就是对象</li>
+<li>对象（Object）实例不具备多少功能，它的主要功能是存储和传输数据！</li>
+</ul>
+<p>3、对象（Object）的分类</p>
+<ul>
+<li>内建对象——由ES标准中定义的对象，在任何的ES中的实现中都可以使用。如Math String Number</li>
+<li>宿主对象——由JS的运行环境提供的对象，目前来讲主要指浏览器提供和定义的对象。如BOM DOM</li>
+<li>自定义对象——由开发人员自己创建的对象</li>
+</ul>
+<p>4、Object类型所具有的任何属性和方法也同样存在于更具体的对象中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Object的每个实例具有的属性和方法</span><br><span class="line">    Constructor</span><br><span class="line">    //保存着用于创建对象的函数</span><br><span class="line"></span><br><span class="line">    hasOwnProperty（propertyName</span><br><span class="line">    //用于检查给定的属性在当前的对象实例中（而不是在实例原型中）是否存在</span><br><span class="line">    //其中作为参数的属性名（propertyName）必须以字符串的形式指定！</span><br><span class="line"></span><br><span class="line">    isPrototypeOf(object)</span><br><span class="line">    //用于检查给定的属性是否能够使用<span class="keyword">for</span>-in语句</span><br><span class="line">    //其中作为参数的属性名必须以字符串的形式指定！</span><br><span class="line"></span><br><span class="line">    toLocaleString()</span><br><span class="line">    //返回对象的字符串表示，该字符串与执行环境的地区对应</span><br><span class="line"></span><br><span class="line">    toString()</span><br><span class="line">    //返回对象的字符串表示</span><br><span class="line"></span><br><span class="line">    valueOf()</span><br><span class="line">    //返回对象的字符串、数值、布尔值表示</span><br></pre></td></tr></table></figure>
+<h2 id="二、JavaScript对象的创建"><a href="#二、JavaScript对象的创建" class="headerlink" title="二、JavaScript对象的创建"></a>二、JavaScript对象的创建</h2><p>1、创建对象——构造函数</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> //创建一个对象</span><br><span class="line"> var obj = new Object();</span><br><span class="line"></span><br><span class="line"> //给创建的对象添加属性</span><br><span class="line"></span><br><span class="line"> obj.name = <span class="string">"Del"</span>;</span><br><span class="line"> obj.age = 29;</span><br><span class="line"> obj.gender = <span class="string">"男"</span></span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    使用new关键字调用的函数就是构造函数constructor</span><br><span class="line">    构造函数是专门用来创建对象的函数</span><br><span class="line">    使用typeOf检查一个对象时，返回object</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<p>2、创建对象——对象字面量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">语法一：</span><br><span class="line">    //创建一个对象</span><br><span class="line">    var obj = &#123;&#125;;</span><br><span class="line">    //给对象中添加属性</span><br><span class="line">    obj.name = <span class="string">"Del"</span>;</span><br><span class="line">    obj.age = 29;</span><br><span class="line">    obj.gender = <span class="string">"男"</span></span><br><span class="line"></span><br><span class="line">语法二：</span><br><span class="line">    var obj = &#123;</span><br><span class="line">        name: <span class="string">"Del"</span>,</span><br><span class="line">        age: 29,</span><br><span class="line">        gender: <span class="string">"男"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript对象的基本操作"><a href="#JavaScript对象的基本操作" class="headerlink" title="JavaScript对象的基本操作"></a>JavaScript对象的基本操作</h2><p>1、对象输出</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(obj)</span><br><span class="line">//Object &#123; name: <span class="string">"Del"</span>, age: 29, gender: <span class="string">"男"</span> &#125;</span><br><span class="line"></span><br><span class="line">console.log(obj.name)</span><br><span class="line">//Del</span><br><span class="line"></span><br><span class="line">console.log(obj.height)</span><br><span class="line">//Undefined</span><br><span class="line">//未定义</span><br></pre></td></tr></table></figure>
+<p>2、对象的属性和属性值</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    给指定的对象添加属性</span><br><span class="line">语法一:</span><br><span class="line">    对象.属性名 = 属性值;</span><br><span class="line">/*</span><br><span class="line">    两种方式创建的对象都可以使用这种方式给对象中添加属性</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">语法二:</span><br><span class="line">    对象[<span class="string">"属性名"</span>] = 属性值;</span><br><span class="line">/* </span><br><span class="line">    使用[]这种形式去操作属性，更加的灵活</span><br><span class="line">    因为在[]中可以直接传递一个变量</span><br><span class="line">    这样变量值是多少就会读取相应的属性</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">语法三:</span><br><span class="line">    属性名:属性值,属性名:属性值</span><br><span class="line">/*</span><br><span class="line">    给对象字面量创建的对象添加属性的方法</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<p>3、删除对象的属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete  obj.name;</span><br><span class="line">//删除obj的name属性</span><br></pre></td></tr></table></figure>
+<p>4、检测指定的对象中是否含有指定的属性</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">"height"</span> <span class="keyword">in</span> obj);</span><br><span class="line">//检测在obj对象中是否定义了height属性</span><br><span class="line">//返回<span class="literal">true</span>则height属性被定义</span><br><span class="line">//若返回<span class="literal">false</span>则heigth属性未定义</span><br></pre></td></tr></table></figure>
+<p>5、对象的保存机制</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">js变量的保存机制</span><br><span class="line">js变量都是保存到栈内存中的</span><br><span class="line">基本数据类型的值直接在栈内存中存储</span><br><span class="line">值与值之间独立存在。修改一个变量不会影响到其他的变量！</span><br><span class="line"></span><br><span class="line">对象保存机制</span><br><span class="line">对象是保存到堆内存中的，每创建一个新的对象，就会在堆内存中开辟出一个新的空间</span><br><span class="line">而对象的变量保存的是对象的内存地址（即对象的引用）</span><br><span class="line">如果两个变量保存的是同一个对象引用</span><br><span class="line">当一个通过变量修改属性时，另一个也会受到影响</span><br></pre></td></tr></table></figure>
+<p>5、对象的比较</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = new Object();</span><br><span class="line">var obj2 = new Object();</span><br><span class="line"></span><br><span class="line">console.log(obj1 == obj2)</span><br><span class="line">//<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    当比较两个基本数据时，就是比较值的大小</span><br><span class="line">    而当比较两个引用数据类型时，比较的是内存地址</span><br><span class="line">    即使两个比较对象一模一样，但是地址不同，则返回<span class="literal">false</span></span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
+<h2 id="总结自励"><a href="#总结自励" class="headerlink" title="总结自励"></a>总结自励</h2><p>百战成王</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/Maifan/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/Maifan/2018/05/24/JavaScript语句总汇/" rel="next" title="JavaScript语句总汇">
+                <i class="fa fa-chevron-left"></i> JavaScript语句总汇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/Maifan/images/header.jpg"
+                alt="Maifan" />
+            
+              <p class="site-author-name" itemprop="name">Maifan</p>
+              <p class="site-description motion-element" itemprop="description">技术、笔记、点滴、随笔</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/Maifan/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/Maifan/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/Maifan/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/betrayalFan" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JavaScript对象的简介"><span class="nav-number">2.</span> <span class="nav-text">一、JavaScript对象的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、JavaScript对象的创建"><span class="nav-number">3.</span> <span class="nav-text">二、JavaScript对象的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript对象的基本操作"><span class="nav-number">4.</span> <span class="nav-text">JavaScript对象的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结自励"><span class="nav-number">5.</span> <span class="nav-text">总结自励</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Maifan</span>
+
+  
+</div>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">什么更痛，是艰辛付出的痛苦还是悔恨的痛苦？</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/Maifan/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/Maifan/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Maifan/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/Maifan/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/Maifan/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/Maifan/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/Maifan/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/Maifan/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
