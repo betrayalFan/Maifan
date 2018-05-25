@@ -82,14 +82,14 @@
 <meta name="description" content="前言● JavaScript对象的简介● JavaScript对象的创建● JavaScript对象的基本操作 一、JavaScript对象的简介1、js中5种基本数据类型  String    字符串 Number    数值 Boolean   布尔值 Null  空值 Undefined 未定义  2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）  属于复合的数据类">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript对象(Object)">
+<meta property="og:title" content="JavaScript对象-Object">
 <meta property="og:url" content="https://betrayalfan.github.io/Maifan/2018/05/25/JavaScript对象-Object/index.html">
 <meta property="og:site_name" content="Maifan">
 <meta property="og:description" content="前言● JavaScript对象的简介● JavaScript对象的创建● JavaScript对象的基本操作 一、JavaScript对象的简介1、js中5种基本数据类型  String    字符串 Number    数值 Boolean   布尔值 Null  空值 Undefined 未定义  2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）  属于复合的数据类">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-25T06:37:15.680Z">
+<meta property="og:updated_time" content="2018-05-25T06:40:51.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript对象(Object)">
+<meta name="twitter:title" content="JavaScript对象-Object">
 <meta name="twitter:description" content="前言● JavaScript对象的简介● JavaScript对象的创建● JavaScript对象的基本操作 一、JavaScript对象的简介1、js中5种基本数据类型  String    字符串 Number    数值 Boolean   布尔值 Null  空值 Undefined 未定义  2、js中除了5种基本数据类型之外的另一种数据类型——对象（Object）  属于复合的数据类">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>JavaScript对象(Object) | Maifan</title>
+  <title>JavaScript对象-Object | Maifan</title>
   
 
 
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript对象(Object)</h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript对象-Object</h1>
         
 
         <div class="post-meta">
@@ -390,7 +390,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> //创建一个对象</span><br><span class="line"> var obj = new Object();</span><br><span class="line"></span><br><span class="line"> //给创建的对象添加属性</span><br><span class="line"></span><br><span class="line"> obj.name = <span class="string">"Del"</span>;</span><br><span class="line"> obj.age = 29;</span><br><span class="line"> obj.gender = <span class="string">"男"</span></span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    使用new关键字调用的函数就是构造函数constructor</span><br><span class="line">    构造函数是专门用来创建对象的函数</span><br><span class="line">    使用typeOf检查一个对象时，返回object</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
 <p>2、创建对象——对象字面量</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">语法一：</span><br><span class="line">    //创建一个对象</span><br><span class="line">    var obj = &#123;&#125;;</span><br><span class="line">    //给对象中添加属性</span><br><span class="line">    obj.name = <span class="string">"Del"</span>;</span><br><span class="line">    obj.age = 29;</span><br><span class="line">    obj.gender = <span class="string">"男"</span></span><br><span class="line"></span><br><span class="line">语法二：</span><br><span class="line">    var obj = &#123;</span><br><span class="line">        name: <span class="string">"Del"</span>,</span><br><span class="line">        age: 29,</span><br><span class="line">        gender: <span class="string">"男"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="JavaScript对象的基本操作"><a href="#JavaScript对象的基本操作" class="headerlink" title="JavaScript对象的基本操作"></a>JavaScript对象的基本操作</h2><p>1、对象输出</p>
+<h2 id="三、JavaScript对象的基本操作"><a href="#三、JavaScript对象的基本操作" class="headerlink" title="三、JavaScript对象的基本操作"></a>三、JavaScript对象的基本操作</h2><p>1、对象输出</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">console.log(obj)</span><br><span class="line">//Object &#123; name: <span class="string">"Del"</span>, age: 29, gender: <span class="string">"男"</span> &#125;</span><br><span class="line"></span><br><span class="line">console.log(obj.name)</span><br><span class="line">//Del</span><br><span class="line"></span><br><span class="line">console.log(obj.height)</span><br><span class="line">//Undefined</span><br><span class="line">//未定义</span><br></pre></td></tr></table></figure>
 <p>2、对象的属性和属性值</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">    给指定的对象添加属性</span><br><span class="line">语法一:</span><br><span class="line">    对象.属性名 = 属性值;</span><br><span class="line">/*</span><br><span class="line">    两种方式创建的对象都可以使用这种方式给对象中添加属性</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">语法二:</span><br><span class="line">    对象[<span class="string">"属性名"</span>] = 属性值;</span><br><span class="line">/* </span><br><span class="line">    使用[]这种形式去操作属性，更加的灵活</span><br><span class="line">    因为在[]中可以直接传递一个变量</span><br><span class="line">    这样变量值是多少就会读取相应的属性</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">语法三:</span><br><span class="line">    属性名:属性值,属性名:属性值</span><br><span class="line">/*</span><br><span class="line">    给对象字面量创建的对象添加属性的方法</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
@@ -587,7 +587,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JavaScript对象的简介"><span class="nav-number">2.</span> <span class="nav-text">一、JavaScript对象的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、JavaScript对象的创建"><span class="nav-number">3.</span> <span class="nav-text">二、JavaScript对象的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript对象的基本操作"><span class="nav-number">4.</span> <span class="nav-text">JavaScript对象的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结自励"><span class="nav-number">5.</span> <span class="nav-text">总结自励</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、JavaScript对象的简介"><span class="nav-number">2.</span> <span class="nav-text">一、JavaScript对象的简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、JavaScript对象的创建"><span class="nav-number">3.</span> <span class="nav-text">二、JavaScript对象的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、JavaScript对象的基本操作"><span class="nav-number">4.</span> <span class="nav-text">三、JavaScript对象的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结自励"><span class="nav-number">5.</span> <span class="nav-text">总结自励</span></a></li></ol></div>
             
 
           </div>
