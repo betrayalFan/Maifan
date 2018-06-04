@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="技术、笔记、点滴、随笔">
+<meta name="description" content="前言  ● 创建正则表达式的对象  ● 正则表达式的语法  ● 正则表达式的转义以及特殊字符  ● 正则表达式和字符串的关系">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript(正则及正则判断)">
 <meta property="og:url" content="https://betrayalfan.github.io/Maifan/2018/05/28/JavaScript-正则及正则判断/index.html">
 <meta property="og:site_name" content="Maifan">
-<meta property="og:description" content="技术、笔记、点滴、随笔">
+<meta property="og:description" content="前言  ● 创建正则表达式的对象  ● 正则表达式的语法  ● 正则表达式的转义以及特殊字符  ● 正则表达式和字符串的关系">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T06:13:31.500Z">
+<meta property="og:updated_time" content="2018-06-04T14:59:26.207Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript(正则及正则判断)">
-<meta name="twitter:description" content="技术、笔记、点滴、随笔">
+<meta name="twitter:description" content="前言  ● 创建正则表达式的对象  ● 正则表达式的语法  ● 正则表达式的转义以及特殊字符  ● 正则表达式和字符串的关系">
 
 
 
@@ -313,6 +314,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/Maifan/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -340,7 +363,35 @@
       
 
       
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  ● 创建正则表达式的对象<br>  ● 正则表达式的语法<br>  ● 正则表达式的转义以及特殊字符<br>  ● 正则表达式和字符串的关系<br>  <a id="more"></a></p>
+<h2 id="一、创建正则表达式的对象"><a href="#一、创建正则表达式的对象" class="headerlink" title="一、创建正则表达式的对象"></a>一、创建正则表达式的对象</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1、构造函数创建正则表达式的对象 </span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"表达式"</span>,<span class="string">"匹配模式"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2、字面量创建正则表达式的对象 </span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/ 表达式 /</span> 正则表达式的匹配模式;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    正则表达式的匹配模式</span></span><br><span class="line"><span class="comment">    ——g:全局（global）模式</span></span><br><span class="line"><span class="comment">    ——i:不区分大小写(case-insensitive)</span></span><br><span class="line"><span class="comment">    ——m:表示多行（multiline）模式</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    可以为一个正则表达式设置多个匹配模式，且顺序无所谓</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"a"</span>,<span class="string">"i"</span>);</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/a/i</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    构造函数和字面量创建正则表达式对象的区别</span></span><br><span class="line"><span class="comment">    1、构造函数虽然麻烦，但是更加的灵活；因为表达式可以是变量</span></span><br><span class="line"><span class="comment">    2、字面量创建正则表达式更加的方便</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>正则表达式的方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">test()</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">——使用这个方法可以用来检查一个字符串是否符合正则表达式</span></span><br><span class="line"><span class="comment">——如果符合则返回true</span></span><br><span class="line"><span class="comment">——否则返货false</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"a"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"a"</span>)) <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">"z"</span>)) <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="二、正则表达式的语法"><a href="#二、正则表达式的语法" class="headerlink" title="二、正则表达式的语法"></a>二、正则表达式的语法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[ab] == a|b  <span class="comment">//a或b</span></span><br><span class="line">[]      <span class="comment">//或</span></span><br><span class="line">|       <span class="comment">//或</span></span><br><span class="line">[a-z]   <span class="comment">//任意小写字母</span></span><br><span class="line">[A-Z]   <span class="comment">//任意大写字母</span></span><br><span class="line">[A-z]   <span class="comment">//任意字母</span></span><br><span class="line">[<span class="number">0</span><span class="number">-9</span>]   <span class="comment">//任意数字</span></span><br><span class="line">[^]     <span class="comment">//除了</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>量词 —通过量词可以设置一个内容出现的次数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">()&#123;n&#125;   <span class="comment">//&#123;&#125;之前的一个内容正好出现n次,一个单位括号可以省略</span></span><br><span class="line">()&#123;n,m&#125; <span class="comment">//&#123;&#125;之前的一个内容出现n-m次</span></span><br><span class="line">()&#123;n,&#125;  <span class="comment">//&#123;&#125;之前的一个内容出现n次以上</span></span><br><span class="line">+       <span class="comment">// +之前的一个内容出现至少1次</span></span><br><span class="line">*       <span class="comment">// * 之前的出现零次以上</span></span><br><span class="line">？      <span class="comment">// ？之前的出现0次或者1次</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">^       <span class="comment">// 以^后的一个内容开头</span></span><br><span class="line">&amp;       <span class="comment">// 以&amp;前的一个内容结尾</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    正则表达式中同时使用^和&amp; 则要求字符串必须完全符合正则表达式</span></span><br><span class="line"><span class="comment">    如果要以同样的内容作为开头或者结尾</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a|a&amp;/</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="三、正则表达式的转义以及特殊字符"><a href="#三、正则表达式的转义以及特殊字符" class="headerlink" title="三、正则表达式的转义以及特殊字符"></a>三、正则表达式的转义以及特殊字符</h2><blockquote>
+<p>1、正则表达式的转义</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/./</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    .表示任意字符</span></span><br><span class="line"><span class="comment">    所以如果检查在字符串中是否含有.  则需要转义</span></span><br><span class="line"><span class="comment">    使.不具有别的含义</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    \. 表示.</span></span><br><span class="line"><span class="comment">    \\ 表示\</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\./</span>;</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\\/</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    在RegExp构造函数中，由于参数是字符串，而\是字符串中转义字符</span></span><br><span class="line"><span class="comment">    所以要使用\则需要用\\来代替</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\."</span>);  <span class="comment">// \.表示.</span></span><br><span class="line">reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\\\"</span>); <span class="comment">// \\\\表示\\</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2、正则表达式的特殊字符</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\w/</span>;</span><br><span class="line"><span class="comment">//任意字母、数字、下划线</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\W/</span>;</span><br><span class="line"><span class="comment">//除了字母、数字、下划线</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\d/</span>;</span><br><span class="line"><span class="comment">//任意数字</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\D/</span>;</span><br><span class="line"><span class="comment">//除了数字</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\s/</span>;</span><br><span class="line"><span class="comment">//空格</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\S/</span>;</span><br><span class="line"><span class="comment">//除了空格</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\b/</span>;</span><br><span class="line"><span class="comment">//单词边界</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/\B/</span>;</span><br><span class="line"><span class="comment">//除了单词边界</span></span><br></pre></td></tr></table></figure>
+<h2 id="四、正则表达式和字符串的关系"><a href="#四、正则表达式和字符串的关系" class="headerlink" title="四、正则表达式和字符串的关系"></a>四、正则表达式和字符串的关系</h2><blockquote>
+<p>(1)、split() </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">split()</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">——可以将一个字符串拆分为一个数组</span></span><br><span class="line"><span class="comment">——此方法中可以传递一个正则表达式作为参数</span></span><br><span class="line"><span class="comment">——不指定全局，也会全局作用</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"1a2c3v4h5j6k7h8a"</span>;</span><br><span class="line"><span class="keyword">var</span> result = str.split(<span class="regexp">/A-z/</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>(2)、search()</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">search() </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">——可以搜索字符串中是否含有指定内容</span></span><br><span class="line"><span class="comment">——如果搜索到制定内容，则返回第一次出现的索引  如果没有返回-1</span></span><br><span class="line"><span class="comment">——可以传正则表达式为参数</span></span><br><span class="line"><span class="comment">——只会查找第一个，即使设置全局也没用</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = str.search(<span class="regexp">/a/</span>);</span><br></pre></td></tr></table></figure>
+<p>(3)、match()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">match()</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">——可以根据正则表达式，从一个字符串中将符合条件的内容提取出来</span></span><br><span class="line"><span class="comment">——默认情况下match()只会找到第一个符合要求的内容</span></span><br><span class="line"><span class="comment">——将匹配到的内容封装到一个数组中返回，即使只有一个查询结果</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">result = str.match(<span class="regexp">/a/ig</span>);</span><br></pre></td></tr></table></figure>
+<p>(4)、replace()</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">replace()</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    ——可以将字符串中指定内容替换为新的内容</span></span><br><span class="line"><span class="comment">    ——参数</span></span><br><span class="line"><span class="comment">        参数1：被替换的内容</span></span><br><span class="line"><span class="comment">        参数2：新的内容</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">result = str.replace(<span class="regexp">/a/gi</span>,<span class="string">"@_@"</span>);</span><br><span class="line"><span class="comment">//将 a 替换为 参数2 中的内容，参数2 可以为空，则删除</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -354,6 +405,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/Maifan/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
       
 
       
@@ -424,8 +481,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -499,6 +565,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、创建正则表达式的对象"><span class="nav-number">2.</span> <span class="nav-text">一、创建正则表达式的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、正则表达式的语法"><span class="nav-number">3.</span> <span class="nav-text">二、正则表达式的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、正则表达式的转义以及特殊字符"><span class="nav-number">4.</span> <span class="nav-text">三、正则表达式的转义以及特殊字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、正则表达式和字符串的关系"><span class="nav-number">5.</span> <span class="nav-text">四、正则表达式和字符串的关系</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
